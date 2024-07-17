@@ -37,7 +37,7 @@ class ModeImputer(BaseEstimator, TransformerMixin):
         return X
 
 
-class DropImputer(BaseEstimator, TransformerMixin):
+class DropColumns(BaseEstimator, TransformerMixin):
     def __init__(self, variables_to_drop=None):
         self.variables_to_drop = variables_to_drop
 
@@ -50,7 +50,7 @@ class DropImputer(BaseEstimator, TransformerMixin):
         return X
 
 
-class DomainImputer(BaseEstimator, TransformerMixin):
+class DomainProcessing(BaseEstimator, TransformerMixin):
     def __init__(self, variable_to_modify=None, variable_to_add=None):
         self.variable_to_modify = variable_to_modify
         self.variable_to_add = variable_to_add
