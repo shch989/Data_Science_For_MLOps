@@ -33,3 +33,26 @@ prediction_model
 ```
 set PYTHONPATH=%PYTHONPATH%;C:\Users\user\Desktop\project\test\mlops\Packaging-ML-Model\packaging-ml-model
 ```
+```
+pip freeze > requirements.txt
+```
+```
+python -m pip install virtualenv
+```
+```
+virtualenv --version
+```
+```
+virtualenv ml_package
+```
+```
+/* Linux/Mac */
+source ml_package/bin/activate
+```
+```
+/* Windows */
+ml_package\Scripts\activate
+```
+```
+pip install -r requirements.txt
+```
