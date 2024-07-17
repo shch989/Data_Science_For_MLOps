@@ -22,6 +22,7 @@ FEATURES = [
     "Education",
     "Self_Employed",
     "ApplicantIncome",
+    "CoapplicantIncome",
     "LoanAmount",
     "Loan_Amount_Term",
     "Credit_History",
@@ -51,9 +52,9 @@ FEATURES_TO_ENCODE = [
     "Property_Area",
 ]
 
-FEATURE_TO_MODIFY = "ApplicantIncome"
-FEATURE_TO_ADD = "CoApplicantIncome"
+FEATURE_TO_MODIFY = ["ApplicantIncome"]
+FEATURE_TO_ADD = "CoapplicantIncome"
 
-DROP_FEATURES = ["CoApplicantIncome"]
+DROP_FEATURES = ["CoapplicantIncome"]
 
 LOG_FEATURES = ["ApplicantIncome", "LoanAmount"]  # taking log of numerical columns

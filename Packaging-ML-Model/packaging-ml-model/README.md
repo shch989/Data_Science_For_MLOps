@@ -30,3 +30,6 @@ prediction_model
     ├── pytest.ini
     └── test_prediction.py
 ```
+```
+set PYTHONPATH=%PYTHONPATH%;C:\Users\user\Desktop\project\test\mlops\Packaging-ML-Model\packaging-ml-model
+```

@@ -60,9 +60,8 @@ class DomainProcessing(BaseEstimator, TransformerMixin):
 
     def transform(self, X):
         X = X.copy()
-        X[self.variable_to_modify] = (
-            X[self.variable_to_modify] + X[self.variable_to_add]
-        )
+        for feature in self.variable_to_modify:
+            X[feature] = X[feature] + X[self.variable_to_add]
         return X
 
 
@@ -84,7 +83,7 @@ class CustomLabelEncoder(BaseEstimator, TransformerMixin):
         return X
 
 
-# Try out log Transformation
+# Try out Log Transformation
 class LogTransforms(BaseEstimator, TransformerMixin):
     def __init__(self, variables=None):
         self.variables = variables
