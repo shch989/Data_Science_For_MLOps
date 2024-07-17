@@ -1,6 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 from prediction_model.config import config
 import numpy as np
+import pandas as pd
 
 
 class MeanImputer(BaseEstimator, TransformerMixin):
@@ -16,7 +17,7 @@ class MeanImputer(BaseEstimator, TransformerMixin):
     def transform(self, X):
         X = X.copy()
         for col in self.variables:
-            X[col].fillna(self.mean_dict[col], inplace=True)
+            X[col] = X[col].fillna(self.mean_dict[col])
         return X
 
 
@@ -33,7 +34,7 @@ class ModeImputer(BaseEstimator, TransformerMixin):
     def transform(self, X):
         X = X.copy()
         for col in self.variables:
-            X[col].fillna(self.mode_dict[col], inplace=True)
+            X[col] = X[col].fillna(self.mode_dict[col])
         return X
 
 
@@ -83,7 +84,6 @@ class CustomLabelEncoder(BaseEstimator, TransformerMixin):
         return X
 
 
-# Try out Log Transformation
 class LogTransforms(BaseEstimator, TransformerMixin):
     def __init__(self, variables=None):
         self.variables = variables
